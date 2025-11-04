@@ -189,7 +189,7 @@
     .price{ margin-top:auto; font-weight:700; color: var(--brown-800) }
     .pair{ font-size: 12px; color: var(--muted) }
     .illus{
-      height:120px; border-radius:12px; background:
+      width:100%; height:140px; object-fit:cover; border-radius:12px; background:
         radial-gradient(120px 80px at 20% 30%, rgba(255,255,255,.85), transparent 60%),
         linear-gradient(150deg, var(--cream-200), var(--caramel-300));
       box-shadow: inset 0 0 0 1px rgba(0,0,0,.03);
@@ -239,6 +239,9 @@
       *{ animation: none !important; transition: none !important }
       html{ scroll-behavior: auto }
     }
+    /* Cards text alignment */
+    .card h3{ min-height:calc(1em * 2.6); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
+    .card p:not(.pair){ min-height:calc(1em * 4.5); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden }
   </style>
 </head>
 <body>
@@ -336,20 +339,18 @@
   <section id="menu">
     <div class="container">
       <h2>Подборка фирменных напитков</h2>
-      <p class="kicker">Нажмите на «Заказать» внизу страницы, чтобы оформить предварительный заказ по телефону.</p>
-
       <div class="cards">
         <article class="card">
-          <div class="illus" aria-hidden="true"></div>
+          <img class="illus" alt="Капучино «Крем-брюле»" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNjAgMTIwJz4KICA8cmVjdCB3aWR0aD0nMTYwJyBoZWlnaHQ9JzEyMCcgcng9JzIwJyBmaWxsPScjZjdlZGUxJy8+CiAgPGVsbGlwc2UgY3g9JzgwJyBjeT0nOTAnIHJ4PSc1NScgcnk9JzE4JyBmaWxsPScjZDhiODk2Jy8+CiAgPHBhdGggZD0nTTQ4IDQwaDY0djM0YTIyIDIyIDAgMCAxLTIyIDIySDcwYTIyIDIyIDAgMCAxLTIyLTIyVjQweicgZmlsbD0nI2ZmZmRmYScgc3Ryb2tlPScjNmU0YjM4JyBzdHJva2Utd2lkdGg9JzQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz4KICA8cGF0aCBkPSdNNTYgNDZoNDh2MTZhMTggMTggMCAwIDEtMTggMThINzRhMTggMTggMCAwIDEtMTgtMThWNDZ6JyBmaWxsPScjZjBjZmEwJy8+CiAgPHBhdGggZD0nTTY0IDU4YzYgNiAxMi02IDE4IDBzMTItNiAxOCAwJyBzdHJva2U9JyM4YjVhMzQnIHN0cm9rZS13aWR0aD0nMycgZmlsbD0nbm9uZScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+CiAgPHBhdGggZD0nTTExNiA1NGgxMGExMiAxMiAwIDAgMSAwIDI0aC0xMCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjOGI1YTM0JyBzdHJva2Utd2lkdGg9JzQnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPgogIDxwYXRoIGQ9J00xMjYgNTRjNCAwIDggNCA4IDEycy00IDEyLTggMTInIHN0cm9rZT0nI2MwODY1Nycgc3Ryb2tlLXdpZHRoPSczJyBmaWxsPSdub25lJy8+Cjwvc3ZnPg==">
           <span class="badge">Хит</span>
           <h3>Капучино «Крем-брюле»</h3>
-          <p>Нежная карамель, тростниковый сахар и плотная молочная пенка — десерт в чашке.</p>
+          <p>Карамель, тростниковый сахар и пенка — десерт в чашке.</p>
           <p class="pair">Советуем с: пончиком «Ванильная глазурь»</p>
           <div class="price">320 ₽</div>
         </article>
 
         <article class="card">
-          <div class="illus" aria-hidden="true"></div>
+          <img class="illus" alt="Эспрессо-тоник с цитрусом" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNjAgMTIwJz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJScgeDI9JzEwMCUnIHkxPScwJScgeTI9JzEwMCUnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZTNmM2ZmJy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2ZmZjZlNScvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nbGlxdWlkJyB4MT0nMCUnIHgyPScwJScgeTE9JzAlJyB5Mj0nMTAwJSc+CiAgICAgIDxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyNmZmU4YTMnLz4KICAgICAgPHN0b3Agb2Zmc2V0PSc2MCUnIHN0b3AtY29sb3I9JyNmZmQyNmEnLz4KICAgICAgPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjZmZiMzQ3Jy8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0nMTYwJyBoZWlnaHQ9JzEyMCcgcng9JzIyJyBmaWxsPSd1cmwoI2JnKScvPgogIDxnIHRyYW5zZm9ybT0ndHJhbnNsYXRlKDQyLDE4KSc+CiAgICA8cGF0aCBkPSdNMTAgMTBoNTZsLTYgNjRhMjAgMjAgMCAwIDEtMjAgMThIMzZhMjAgMjAgMCAwIDEtMjAtMThMMTAgMTB6JyBmaWxsPSd3aGl0ZScgc3Ryb2tlPScjMmU1ODc0JyBzdHJva2Utd2lkdGg9JzQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz4KICAgIDxwYXRoIGQ9J00xNiAxNmg0NGwtNC41IDQ2QTE1LjUgMTUuNSAwIDAgMSA0MC43IDc2aC05LjRBMTUuNSAxNS41IDAgMCAxIDIwLjUgNjJMMTYgMTZ6JyBmaWxsPSd1cmwoI2xpcXVpZCknIHN0cm9rZT0nI2Y2YTEwMCcgc3Ryb2tlLXdpZHRoPScyJy8+CiAgICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMiwwKSc+CiAgICAgIDxjaXJjbGUgY3g9JzUyJyBjeT0nMjYnIHI9JzEyJyBmaWxsPScjZmZmJy8+CiAgICAgIDxwYXRoIGQ9J001MiAxNGExMiAxMiAwIDAgMSAwIDI0JyBmaWxsPSdub25lJyBzdHJva2U9JyNmNmExMDAnIHN0cm9rZS13aWR0aD0nMycvPgogICAgICA8cGF0aCBkPSdNNTIgMTRhMTIgMTIgMCAwIDAgMCAyNCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjMmU1ODc0JyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1kYXNoYXJyYXk9JzIgMicvPgogICAgPC9nPgogICAgPHBhdGggZD0nTTE4IDQ0aDUyJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgb3BhY2l0eT0nLjQ1Jy8+CiAgICA8cGF0aCBkPSdNMjAgNThoNDgnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBvcGFjaXR5PScuMzUnLz4KICAgIDxjaXJjbGUgY3g9JzI2JyBjeT0nNTAnIHI9JzMnIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9Jy42Jy8+CiAgICA8Y2lyY2xlIGN4PSc1OCcgY3k9JzUwJyByPSczJyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScuNicvPgogIDwvZz4KICA8cGF0aCBkPSdNMTE4IDcwcTggNiAxMCAyMCcgc3Ryb2tlPScjMmU1ODc0JyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPgogIDxjaXJjbGUgY3g9JzEyMicgY3k9JzYyJyByPScxOCcgZmlsbD0nbm9uZScgc3Ryb2tlPScjZjZhMTAwJyBzdHJva2Utd2lkdGg9JzQnLz4KICA8Y2lyY2xlIGN4PScxMjYnIGN5PSc2MCcgcj0nMycgZmlsbD0nI2Y2YTEwMCcvPgo8L3N2Zz4=">
           <span class="badge">Сезон</span>
           <h3>Эспрессо-тоник с цитрусом</h3>
           <p>Яркая кислинка апельсина и холодный тоник подчёркивают чистый вкус эспрессо.</p>
@@ -358,7 +359,7 @@
         </article>
 
         <article class="card">
-          <div class="illus" aria-hidden="true"></div>
+          <img class="illus" alt="Флэт уайт «Ореховый»" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNjAgMTIwJz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nZmxhdEJnJyB4MT0nMCUnIHgyPScxMDAlJyB5MT0nMCUnIHkyPScxMDAlJz4KICAgICAgPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nI2YwZTllMicvPgogICAgICA8c3RvcCBvZmZzZXQ9JzEwMCUnIHN0b3AtY29sb3I9JyNlM2Q0YzInLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPScxNjAnIGhlaWdodD0nMTIwJyByeD0nMjInIGZpbGw9J3VybCgjZmxhdEJnKScvPgogIDxnIHRyYW5zZm9ybT0ndHJhbnNsYXRlKDMwLDI0KSc+CiAgICA8cmVjdCB4PSc0JyB5PScxOCcgd2lkdGg9JzkyJyBoZWlnaHQ9JzU2JyByeD0nMjYnIGZpbGw9J3doaXRlJyBzdHJva2U9JyM2YjRiMzUnIHN0cm9rZS13aWR0aD0nNCcvPgogICAgPHJlY3QgeD0nMTYnIHk9JzMwJyB3aWR0aD0nNjgnIGhlaWdodD0nMzInIHJ4PScxNicgZmlsbD0nI2YwZDZiNCcvPgogICAgPGNpcmNsZSBjeD0nNTAnIGN5PSc0Nicgcj0nMTgnIGZpbGw9JyNkNWEyNmYnLz4KICAgIDxjaXJjbGUgY3g9JzUwJyBjeT0nNDYnIHI9JzEwJyBmaWxsPScjZmZmM2U0Jy8+CiAgICA8cGF0aCBkPSdNNTAgMjhjLTggOC04IDE2IDAgMjRzOCAxNiAwIDI0JyBzdHJva2U9JyM2YjRiMzUnIHN0cm9rZS13aWR0aD0nMycgZmlsbD0nbm9uZScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+CiAgICA8cGF0aCBkPSdNMjAgNTJoNjAnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMycgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBvcGFjaXR5PScuNCcvPgogICAgPHBhdGggZD0nTTI4IDY2aDQ0JyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgb3BhY2l0eT0nLjMnLz4KICA8L2c+CiAgPGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoMTEwLDM0KSc+CiAgICA8cGF0aCBkPSdNMCAyMmM0LTEwIDgtMTYgMTgtMjAnIHN0cm9rZT0nIzhjNWEzNicgc3Ryb2tlLXdpZHRoPSc0JyBzdHJva2UtbGluZWNhcD0ncm91bmQnLz4KICAgIDxwYXRoIGQ9J002IDMyYzgtNiAxNC0xMCAzMi0xMicgc3Ryb2tlPScjYzc5YzZmJyBzdHJva2Utd2lkdGg9JzYnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPgogICAgPHBhdGggZD0nTTggNDRjMTAtOCAxOC0xMiAzMC0xNCcgc3Ryb2tlPScjZjNkMWE4JyBzdHJva2Utd2lkdGg9JzUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgb3BhY2l0eT0nLjknLz4KICAgIDxjaXJjbGUgY3g9JzE4JyBjeT0nMjInIHI9JzYnIGZpbGw9JyM4YzVhMzYnLz4KICAgIDxjaXJjbGUgY3g9JzIyJyBjeT0nMzYnIHI9JzYnIGZpbGw9JyNjNzljNmYnLz4KICA8L2c+Cjwvc3ZnPg==">
           <span class="badge">Авторский</span>
           <h3>Флэт уайт «Ореховый»</h3>
           <p>Сироп пралине собственного приготовления и двойной шот для насыщенности.</p>
@@ -367,7 +368,7 @@
         </article>
 
         <article class="card">
-          <div class="illus" aria-hidden="true"></div>
+          <img class="illus" alt="Латте «Пончиковый сироп»" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNjAgMTIwJz4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0nbGF0dGVCZycgY3g9JzMwJScgY3k9JzMwJScgcj0nODAlJz4KICAgICAgPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nI2ZmZjZlOScvPgogICAgICA8c3RvcCBvZmZzZXQ9JzEwMCUnIHN0b3AtY29sb3I9JyNmZmUwYzcnLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPScxNjAnIGhlaWdodD0nMTIwJyByeD0nMjInIGZpbGw9J3VybCgjbGF0dGVCZyknLz4KICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyOCwxOCknPgogICAgPHBhdGggZD0nTTEyIDIwaDcybC02IDYwYTI0IDI0IDAgMCAxLTI0IDIxSDQyYTI0IDI0IDAgMCAxLTI0LTIxTDEyIDIweicgZmlsbD0nI2ZmZjdmMCcgc3Ryb2tlPScjYjA2NzM0JyBzdHJva2Utd2lkdGg9JzQnLz4KICAgIDxwYXRoIGQ9J00yNCAzMGg0OGwtNCAzOGExNiAxNiAwIDAgMS0xNiAxNEg0NGExNiAxNiAwIDAgMS0xNi0xNHonIGZpbGw9JyNmNGM5YTMnLz4KICAgIDxwYXRoIGQ9J00zMiA0MmM4IDQgMTYtNCAyNCAwczE2LTQgMjQgMCcgc3Ryb2tlPScjZDE4NTRkJyBzdHJva2Utd2lkdGg9JzQnIGZpbGw9J25vbmUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPgogICAgPHBhdGggZD0nTTIwIDU0YzE0IDYgMjggNiA0MiAwJyBzdHJva2U9J3doaXRlJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgb3BhY2l0eT0nLjQnLz4KICAgIDxjaXJjbGUgY3g9JzIwJyBjeT0nNTYnIHI9JzMnIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9Jy41Jy8+CiAgICA8Y2lyY2xlIGN4PSc2OCcgY3k9JzU2JyByPSczJyBmaWxsPScjZmZmZmZmJyBvcGFjaXR5PScuNScvPgogICAgPHBhdGggZD0nTTg0IDMyaDEwYzkgMCAxNiA3IDE2IDE2cy03IDE2LTE2IDE2aC04JyBmaWxsPSdub25lJyBzdHJva2U9JyNiMDY3MzQnIHN0cm9rZS13aWR0aD0nNCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+CiAgICA8cGF0aCBkPSdNOTIgMzZoMmM2IDAgMTEgNSAxMSAxMnMtNSAxMi0xMSAxMmgtMicgc3Ryb2tlPScjZjRjOWEzJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgxMDAsNzApJz4KICAgIDxjaXJjbGUgY3g9JzIwJyBjeT0nMjAnIHI9JzE4JyBmaWxsPScjZmZiNzZiJyBzdHJva2U9JyNiMjUwMmMnIHN0cm9rZS13aWR0aD0nNCcvPgogICAgPGNpcmNsZSBjeD0nMjAnIGN5PScyMCcgcj0nMTAnIGZpbGw9JyNmZmY0ZTgnLz4KICAgIDxjaXJjbGUgY3g9JzIwJyBjeT0nMjAnIHI9JzQnIGZpbGw9JyNmZmI3NmInLz4KICAgIDxwYXRoIGQ9J00wIDI0YzggNiAyNCA2IDMyIDAnIHN0cm9rZT0nI2IyNTAyYycgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnLz4KICA8L2c+Cjwvc3ZnPg==">
           <span class="badge">Без кофеина</span>
           <h3>Латте «Пончиковый сироп»</h3>
           <p>Зерновой напиток на овсяном молоке с ванилью и нотами сахарной пудры.</p>
@@ -405,8 +406,8 @@
               <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a7 7 0 017 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 017-7z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
               <div>
                 <strong>Адрес</strong><br>
-                ул. Пончиковая, 7 — <span title="пример адреса">обновите под ваш город</span><br>
-                <a target="_blank" rel="noopener" href="https://maps.google.com/?q=ул.+Пончиковая,+7">Открыть в Google Картах</a>
+                г. Москва, ул. Тверская, 7<br>
+                <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Москва,+Тверская+7">Открыть в Google Картах</a>
               </div>
             </li>
             <li>
@@ -428,10 +429,7 @@
         </div>
 
         <div class="mapbox">
-          <div>
-            <strong>Здесь будет карта</strong>
-            <small>Можно встроить карту Google или Яндекс, указав точный адрес.</small>
-          </div>
+          <iframe src="https://maps.google.com/maps?q=Москва%2C%20Тверская%207&output=embed" title="Карта — Москва, Тверская 7" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%; height:100%; border:0"></iframe>
         </div>
       </div>
     </div>
