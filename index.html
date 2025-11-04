@@ -205,7 +205,7 @@
     }
 
     /* ========= О компании ========= */
-    section{ padding: clamp(56px, 8vw, 96px) 0 }
+    section{ padding: clamp(40px, 6vw, 80px) 0 }
     section > .container > h2{
       font-family:"Playfair Display", serif; font-size: clamp(22px, 2.4vw + 12px, 36px); margin:0 0 18px; color: var(--brown-900)
     }
@@ -223,7 +223,7 @@
       box-shadow: var(--shadow-sm);
     }
     .coffee-photo{
-      padding: clamp(32px, 6vw, 64px) 0;
+      padding: clamp(28px, 5vw, 56px) 0;
     }
     .coffee-photo figure{
       margin:0; border-radius: calc(var(--radius) + 8px);
@@ -235,7 +235,7 @@
       background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,237,225,.92));
     }
     .highlights{
-      padding: clamp(56px, 7vw, 88px) 0;
+      padding: clamp(40px, 6vw, 72px) 0;
     }
     .highlight-grid{
       display:grid;
@@ -256,6 +256,16 @@
       box-shadow: var(--shadow-sm);
     }
     .highlight-icon svg{ width:26px; height:26px; }
+    .back-to-top{
+      position:fixed; right:20px; bottom:20px; z-index:1100;
+      width:48px; height:48px; border-radius:50%; border:0;
+      background: linear-gradient(135deg, var(--caramel-400), var(--caramel-500));
+      color:#fff; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;
+      box-shadow: var(--shadow-md); transition: opacity .2s ease, transform .2s ease;
+      opacity:0; pointer-events:none;
+    }
+    .back-to-top.visible{ opacity:1; pointer-events:auto; }
+    .back-to-top:hover{ transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
     /* ========= Меню (превью) ========= */
     #menu{ scroll-margin-top: calc(var(--header-h) + 16px) }
@@ -479,6 +489,12 @@
     </div>
   </section>
 
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
   <!-- ====== Menu Preview ====== -->
   <section id="menu">
     <div class="container">
@@ -591,14 +607,26 @@
       const mobile = document.getElementById('mobileMenu');
       const links = mobile.querySelectorAll('a');
       const yearEl = document.getElementById('year');
+      const backToTop = document.getElementById('backToTop');
 
       // Год в подвале
       yearEl.textContent = new Date().getFullYear();
 
       // Тень у хедера при прокрутке
-      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 4);
+      const onScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 4);
+        if(backToTop){
+          backToTop.classList.toggle('visible', window.scrollY > 220);
+        }
+      };
       onScroll();
       window.addEventListener('scroll', onScroll, { passive:true });
+
+      if(backToTop){
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top:0, behavior:'smooth' });
+        });
+      }
 
       // Мобильное меню
       burger.addEventListener('click', () => {
