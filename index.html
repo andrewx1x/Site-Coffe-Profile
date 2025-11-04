@@ -6,6 +6,61 @@
   <title>Два пончика и чашка кофе — Спешиалти-кофейня!</title>
   <meta name="description" content="Специализированная кофейня «Два пончика и чашка кофе». Авторские напитки, теплый сервис и история, сваренная с любовью.">
   <meta name="theme-color" content="#3b2416" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="canonical" href="https://2donuts.coffee/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://2donuts.coffee/" />
+  <meta property="og:title" content="Два пончика и чашка кофе — кофейня в Москве" />
+  <meta property="og:description" content="Закажите специальти-напитки и свежие пончики. Москва, ул. Тверская, 7." />
+  <meta property="og:image" content="https://2donuts.coffee/coffee.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Два пончика и чашка кофе — кофейня в Москве" />
+  <meta name="twitter:description" content="Спешиалти-напитки, свежая выпечка и уютный сервис. Заходите или звоните." />
+  <meta name="twitter:image" content="https://2donuts.coffee/coffee.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Два пончика и чашка кофе",
+    "image": "https://2donuts.coffee/coffee.png",
+    "url": "https://2donuts.coffee/",
+    "telephone": "+7-000-000-00-00",
+    "priceRange": "₽₽",
+    "servesCuisine": ["coffee", "desserts"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Тверская, 7",
+      "addressLocality": "Москва",
+      "postalCode": "125009",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.7578,
+      "longitude": 37.6136
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "menu": "https://2donuts.coffee/#menu",
+    "sameAs": []
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ========= CSS Переменные / Тема ========= */
@@ -167,6 +222,40 @@
       background: linear-gradient(160deg, color-mix(in oklab, var(--caramel-300) 18%, #fff), #fff);
       box-shadow: var(--shadow-sm);
     }
+    .coffee-photo{
+      padding: clamp(32px, 6vw, 64px) 0;
+    }
+    .coffee-photo figure{
+      margin:0; border-radius: calc(var(--radius) + 8px);
+      overflow:hidden; box-shadow: var(--shadow-lg); background:#fff;
+    }
+    .coffee-photo img{ width:100%; display:block; object-fit:cover; max-height:520px; }
+    .coffee-photo figcaption{
+      padding:18px 22px; font-size:15px; color: var(--muted);
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,237,225,.92));
+    }
+    .highlights{
+      padding: clamp(56px, 7vw, 88px) 0;
+    }
+    .highlight-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(16px, 3vw, 28px);
+    }
+    .highlight-card{
+      background:#fff; border-radius: calc(var(--radius) + 6px);
+      padding: clamp(20px, 2.6vw, 32px);
+      box-shadow: var(--shadow-sm);
+      display:flex; flex-direction:column; gap:14px;
+      border:1px solid color-mix(in oklab, var(--brown-900) 5%, transparent);
+    }
+    .highlight-icon{
+      width:52px; height:52px; border-radius:16px;
+      background: linear-gradient(140deg, var(--caramel-400), var(--caramel-500));
+      display:grid; place-items:center; color:#fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .highlight-icon svg{ width:26px; height:26px; }
 
     /* ========= Меню (превью) ========= */
     #menu{ scroll-margin-top: calc(var(--header-h) + 16px) }
@@ -208,10 +297,10 @@
     .icon{ width:22px; height:22px; flex:0 0 22px; margin-top:2px }
     .contact .actions{ margin-top:12px }
     .mapbox{
-      border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow-sm); background: var(--cream-200); aspect-ratio: 16/10;
-      display:flex; align-items:center; justify-content:center; text-align:center; padding:16px; color: var(--brown-800)
+      border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow-sm);
+      background: var(--cream-200); aspect-ratio: 16/10;
     }
-    .mapbox small{ display:block; color: var(--muted); margin-top:6px }
+    .mapbox iframe{ width:100%; height:100%; display:block; border:0 }
 
     /* ========= Подвал ========= */
     footer{ padding: 24px 0 40px; color: #6a5348; text-align:center; font-size:14px }
@@ -335,6 +424,61 @@
     </div>
   </section>
 
+  <!-- ====== Coffee Photo ====== -->
+  <section class="coffee-photo" aria-labelledby="coffee-photo">
+    <div class="container">
+      <figure>
+        <img src="coffee.png" alt="Свежесваренный кофе из нашего меню" loading="lazy">
+        <figcaption id="coffee-photo">Свежесваренный кофе — ещё одна причина заглянуть к нам.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ====== Highlights ====== -->
+  <section class="highlights" id="benefits" aria-labelledby="benefits-title">
+    <div class="container">
+      <h2 id="benefits-title">Почему приходят к нам</h2>
+      <p class="kicker">Мы соединяем спешиалти-подход с домашней заботой, чтобы каждый гость чувствовал себя своим.</p>
+
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 13c3 0 4-6 8-6s5 6 8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M5 18h14M6 21h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 4h8l-1 4H9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Спешиалти-зерно</h3>
+          <p>Работаем с микролотами и обжариваем малыми партиями, чтобы сохранить натуральный вкус и аромат стакана.</p>
+        </article>
+
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4.5 10.5a7.5 7.5 0 1115 0c0 7.5-7.5 11-7.5 11S4.5 18 4.5 10.5z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="10.5" r="2.3" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Пончики вручную</h3>
+          <p>Печём и глазируем пончики каждый день: авторские сиропы, локальные ингредиенты и никаких полуфабрикатов.</p>
+        </article>
+
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16v11a3 3 0 01-3 3H7a3 3 0 01-3-3V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 3h8v3H8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Забота и атмосфера</h3>
+          <p>Бариста знают гостей по именам, предложат идеальную пару к напитку и помогут запланировать заказ заранее.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== Menu Preview ====== -->
   <section id="menu">
     <div class="container">
@@ -429,7 +573,7 @@
         </div>
 
         <div class="mapbox">
-          <iframe src="https://maps.google.com/maps?q=Москва%2C%20Тверская%207&output=embed" title="Карта — Москва, Тверская 7" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%; height:100%; border:0"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.139198624743!2d37.61105037745596!3d55.75790217395966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a47f70f78e1%3A0x4f7f5ee7bf2ad260!2z0KLQvtC60YDQvtCy0LjRgNC-0LLQsCwgNywg0JzQvtGB0LrQstCwLCDQoNC10YHQvy4g0JDQstGB0LrQuNC5!5e0!3m2!1sru!2sru!4v1730726400000!5m2!1sru!2sru" title="Карта — Москва, Тверская 7" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
     </div>
